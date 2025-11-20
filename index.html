@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oceanside Hair Salon – Your Local Hair Care Destination</title>
+    
+    <title>Oceanside Hair Salon – Best Haircuts & Color in Oceanside, CA</title>
+    <meta name="description" content="Discover the best hair care at Oceanside Hair Salon. We offer expert haircuts, coloring, and styling services in Oceanside, CA. Book your appointment today for a fresh look.">
+    <meta name="keywords" content="Oceanside hair salon, best hair salon Oceanside, haircuts, coloring, balayage, men haircut, women haircut, hair styling Oceanside CA">
+    
+    <meta property="og:title" content="Oceanside Hair Salon – Your Local Hair Care Destination">
+    <meta property="og:description" content="Expert styling and hair care services in the heart of Oceanside, CA.">
+    <meta property="og:type" content="website">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* --- CSS Variables & Reset --- */
         :root {
@@ -22,6 +33,14 @@
             padding: 0;
             box-sizing: border-box;
         }
+		.blog-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid var(--secondary-color);
+            transition: color 0.3s;
+        }
+        .blog-link:hover { color: var(--secondary-color); }
 
         body {
             font-family: var(--font-body);
@@ -262,6 +281,33 @@
             <button class="btn-contact" id="contactBtn">Contact Us</button>
         </div>
     </section>
+	<section class="services-section" style="background-color: #fff;">
+        <h2>Hair Care Guides & Local Tips</h2>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <h3>Best Hair Salons in Oceanside (2025)</h3>
+                <p>Looking for the top spots? We breakdown what makes a salon truly great in our coastal city.</p>
+                <br>
+                <a href="blog/best-hair-salons-oceanside-2025.html" class="blog-link">Read Guide &rarr;</a>
+            </div>
+
+            <div class="service-card">
+                <h3>Haircut Prices in Oceanside</h3>
+                <p>A full guide to understanding pricing for men's and women's cuts in the area.</p>
+                <br>
+                <a href="blog/haircut-prices-oceanside.html" class="blog-link">Check Prices &rarr;</a>
+            </div>
+
+            <div class="service-card">
+                <h3>Men’s vs Women’s Styles</h3>
+                <p>Explore the trending styles for 2025 and what works best for the Oceanside lifestyle.</p>
+                <br>
+                <a href="blog/mens-womens-haircut-styles-oceanside.html" class="blog-link">See Trends &rarr;</a>
+            </div>
+
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2024 Oceanside Hair Salon. All rights reserved.</p>
@@ -306,4 +352,5 @@
         }
     </script>
 </body>
+
 </html>
