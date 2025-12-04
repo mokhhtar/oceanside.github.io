@@ -33,7 +33,7 @@
         body {
             font-family: var(--font-body);
             color: var(--text-dark);
-            line-height: 1.8;
+            line-height: 1.6;
             background-color: var(--bg-light);
         }
         h1, h2, h3 { font-family: var(--font-heading); }
@@ -100,7 +100,7 @@
             background: linear-gradient(rgba(0, 95, 115, 0.7), rgba(10, 147, 150, 0.7)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
-            height: 50vh; /* Slightly smaller for contact page */
+            height: 50vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -115,10 +115,11 @@
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
+        header p { font-size: 1.2rem; }
 
-        /* --- Contact Page Specifics --- */
+        /* --- Contact Layout --- */
         .container { 
-            max-width: 1000px; 
+            max-width: 1100px; 
             margin: -50px auto 50px; /* Overlap effect */
             padding: 0 20px; 
             display: flex; 
@@ -129,7 +130,7 @@
         }
         .info-box { 
             flex: 1; 
-            min-width: 300px; 
+            min-width: 350px; 
             background: white; 
             padding: 40px; 
             border-radius: 8px; 
@@ -137,8 +138,9 @@
         }
         .map-container { 
             flex: 1; 
-            min-width: 300px; 
-            height: 450px; 
+            min-width: 350px; 
+            height: auto; 
+            min-height: 500px;
             border-radius: 8px; 
             overflow: hidden; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
@@ -148,7 +150,30 @@
         .contact-item { margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; }
         .contact-item:last-child { border-bottom: none; }
         .contact-label { font-weight: bold; color: var(--primary-color); display: block; margin-bottom: 5px; font-size: 1.1rem; }
-        .contact-item p { margin: 0; color: #555; }
+        
+        /* --- Form Styles --- */
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+        button[type="submit"] {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        button[type="submit"]:hover { background-color: var(--primary-color); }
 
         /* --- Footer --- */
         footer { background-color: var(--primary-color); color: var(--text-light); text-align: center; padding: 2rem; margin-top: 4rem; }
@@ -195,7 +220,7 @@
 <div class="container">
     
     <div class="info-box">
-        <h2 style="color: var(--primary-color); margin-bottom: 30px;">Get in Touch</h2>
+        <h2 style="color: var(--primary-color); margin-bottom: 20px;">Get in Touch</h2>
         
         <div class="contact-item">
             <span class="contact-label">📍 Location</span>
@@ -210,19 +235,33 @@
         </div>
 
         <div class="contact-item">
-            <span class="contact-label">📧 Email</span>
+            <span class="contact-label">📞 Phone & Email</span>
+            <p><a href="tel:+16469803726" style="color: var(--secondary-color); text-decoration: none; font-weight: bold;">+1 (646) 980-3726</a></p>
             <p><a href="mailto:oceansidehairsalon@gmail.com" style="color: var(--secondary-color); text-decoration: none;">oceansidehairsalon@gmail.com</a></p>
         </div>
 
-        <div class="contact-item">
-            <span class="contact-label">📱 Phone</span>
-            <p><a href="tel:+16469803726" style="color: var(--secondary-color); text-decoration: none; font-weight: bold; font-size: 1.1rem;">+1 (646) 980-3726</a></p>
-        </div>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
+
+        <h2 style="color: var(--primary-color); margin-bottom: 20px;">Request Appointment</h2>
+        <form action="https://formspree.io/f/mjknowby" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="phone" placeholder="Phone Number">
+            <select name="service">
+                <option value="" disabled selected>Select Service</option>
+                <option value="Haircut">Haircut</option>
+                <option value="Color">Color / Balayage</option>
+                <option value="Treatment">Treatment</option>
+                <option value="Consultation">Consultation</option>
+            </select>
+            <textarea name="message" placeholder="Preferred date/time or special requests..." rows="4"></textarea>
+            <button type="submit">Send Request</button>
+        </form>
     </div>
 
     <div class="map-container">
         <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107193.91684704085!2d-117.3794833!3d33.1958696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc655e69455555%3A0x6f332030f242030!2sOceanside%2C%20CA!5e0!3m2!1sen!2sus!4v1625680000000!5m2!1sen!2sus" 
+            src="https://maps.google.com/maps?q=401%20Mission%20Ave%2C%20Oceanside%2C%20CA%2092054&t=&z=15&ie=UTF8&iwloc=&output=embed" 
             allowfullscreen="" loading="lazy">
         </iframe>
     </div>
@@ -240,6 +279,11 @@
             <a href="https://www.instagram.com/oceanside_hair_salon" target="_blank" aria-label="Visit our Instagram">
                 <svg class="social-icon" viewBox="0 0 24 24">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.36-.2 6.78-2.618 6.98-6.98.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.361-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/oceanside_hair_salon" target="_blank" aria-label="Visit our Instagram">
+                <svg class="social-icon" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.36-.2 6.78-2.618 6.98-6.98.058-1.28.072-1.689.072-4.948.072 3.259 0 3.668-.014 4.948-.072 4.36-.2 6.78-2.618 6.98-6.98.058-1.28.072-1.689.072-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                 </svg>
             </a>
         </div>
