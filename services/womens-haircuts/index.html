@@ -11,21 +11,51 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Women's Haircuts in Oceanside, CA | Precision Cuts & Styling</title>
-    <meta name="description" content="Expert women's haircuts in Oceanside. From layered cuts and bobs to long hair styling. Expert stylists for the coastal lifestyle. Book now.">
+    <title>Women's Haircuts in Oceanside, CA | Precision Cuts, Layers & Bobs</title>
+    <meta name="description" content="Looking for the best women's haircut in Oceanside? Our expert stylists specialize in precision bobs, long layers, shag cuts, and curly hair styling tailored to the California lifestyle.">
+    <meta name="keywords" content="Oceanside hair salon, women's haircuts, bob cut, long layers, curly hair specialist, Oceanside CA, hair styling">
     <link rel="canonical" href="https://oceansidehairsalon.com/services/womens-haircuts/" />
     
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Women's Haircut",
+      "provider": {
+        "@type": "HairSalon",
+        "name": "Oceanside Hair Salon",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "401 Mission Ave",
+          "addressLocality": "Oceanside",
+          "addressRegion": "CA",
+          "postalCode": "92054",
+          "addressCountry": "US"
+        },
+        "priceRange": "$75-$150",
+        "telephone": "+1-646-980-3726"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Oceanside"
+      },
+      "description": "Precision haircuts for women including bobs, layers, and curly cuts."
+    }
+    </script>
+
     <style>
-        /* --- 1. Variables & Reset --- */
+        /* --- CSS Reset & Variables --- */
         :root {
             --primary-color: #005f73;
             --secondary-color: #0a9396;
             --accent-color: #e9d8a6;
             --text-dark: #333333;
             --text-light: #ffffff;
-            --bg-light: #f4f7f6;
+            --bg-light: #f8f9fa;
             --font-heading: 'Playfair Display', serif;
             --font-body: 'Lato', sans-serif;
         }
@@ -36,73 +66,68 @@
             line-height: 1.8;
             background-color: var(--bg-light);
         }
-        h1, h2, h3 { font-family: var(--font-heading); }
-
-        /* --- 2. Navbar Styles (القائمة الكاملة) --- */
+        h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary-color); }
+        p { margin-bottom: 20px; font-size: 1.05rem; }
+        
+        /* --- Navbar (Unified) --- */
         .navbar {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: rgba(0, 95, 115, 0.85);
+            background-color: rgba(0, 95, 115, 0.95);
             width: 100%;
-            position: absolute;
+            position: fixed; /* Fixed so it stays when scrolling */
             top: 0;
             left: 0;
             padding: 1rem 0;
             z-index: 1000;
             backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .navbar a, .navbar .dropbtn {
             font-family: 'Lato', sans-serif;
             font-weight: bold;
-            font-size: 17px;
+            font-size: 16px;
             color: white !important;
             background-color: transparent !important;
             border: none !important;
-            padding: 14px 20px;
+            padding: 10px 20px;
             text-decoration: none !important;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: inline-block;
-            outline: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        .navbar a:hover, .navbar .dropdown:hover .dropbtn {
-            color: var(--secondary-color) !important;
-            transform: translateY(-2px);
-        }
-        /* Dropdown Logic */
+        .navbar a:hover, .navbar .dropdown:hover .dropbtn { color: var(--accent-color) !important; }
         .dropdown { position: relative; display: inline-block; }
         .dropdown-content {
             display: none;
             position: absolute;
             background-color: #ffffff;
             min-width: 220px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
             z-index: 1;
-            border-top: 3px solid var(--secondary-color);
-            text-align: left;
-            border-radius: 4px;
+            border-top: 4px solid var(--secondary-color);
         }
         .dropdown-content a {
             color: #333 !important;
-            padding: 12px 16px;
+            padding: 14px 16px;
             display: block;
             font-weight: normal;
-            font-size: 15px;
+            font-size: 14px;
+            text-transform: none;
+            border-bottom: 1px solid #eee;
         }
-        .dropdown-content a:hover {
-            background-color: #f1f1f1 !important;
-            color: var(--primary-color) !important;
-        }
+        .dropdown-content a:last-child { border-bottom: none; }
+        .dropdown-content a:hover { background-color: #f1f1f1 !important; color: var(--primary-color) !important; }
         .dropdown:hover .dropdown-content { display: block; }
 
-        /* --- 3. Header / Hero Section --- */
+        /* --- Hero Section --- */
         header {
-            /* مسار الصورة الخاصة بصفحة النساء */
-            background: linear-gradient(rgba(0, 95, 115, 0.7), rgba(10, 147, 150, 0.7)), url('/images/womens-haircut-styling-oceanside.jpg');
+            background: linear-gradient(rgba(0, 95, 115, 0.6), rgba(10, 147, 150, 0.6)), url('/images/womens-haircuts/womens-haircut-styling-oceanside.jpg');
             background-size: cover;
             background-position: center;
-            height: 60vh; /* ارتفاع مناسب للصفحات الفرعية */
+            height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -110,102 +135,135 @@
             text-align: center;
             color: var(--text-light);
             padding: 20px;
-            padding-top: 80px;
+            margin-top: 0;
         }
         header h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+            letter-spacing: 2px;
         }
         header p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 300;
-            letter-spacing: 1px;
-            max-width: 600px;
+            max-width: 800px;
+            margin-bottom: 2rem;
         }
 
-        /* --- 4. Content Container --- */
+        /* --- Main Content Layout --- */
         .container {
-            max-width: 900px;
-            margin: -50px auto 50px; /* تداخل مع الهيدر */
-            padding: 40px;
+            max-width: 1000px;
+            margin: -80px auto 50px;
+            padding: 60px;
             background: white;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             position: relative;
             z-index: 10;
         }
-        .container h2 { color: var(--primary-color); margin-top: 0; }
-        .container h3 { color: var(--secondary-color); margin-top: 2rem; margin-bottom: 1rem; }
-        .container p { margin-bottom: 15px; color: #555; }
 
-        /* --- 5. Gallery Grid --- */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+        /* --- Typography & Sections --- */
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-header h2 { font-size: 2.5rem; position: relative; display: inline-block; padding-bottom: 15px; }
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
         }
-        .gallery-grid img {
+        
+        .feature-row { display: flex; gap: 40px; margin-bottom: 50px; align-items: center; }
+        .feature-text { flex: 1; }
+        .feature-img { flex: 1; }
+        .feature-img img { width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        /* --- Service List --- */
+        .service-list { list-style: none; padding: 0; }
+        .service-list li {
+            background: #f9f9f9;
+            margin-bottom: 20px;
+            padding: 25px;
+            border-left: 4px solid var(--secondary-color);
+            transition: transform 0.3s;
+        }
+        .service-list li:hover { transform: translateX(5px); background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .service-list h3 { margin-bottom: 10px; font-size: 1.4rem; }
+
+        /* --- The Process Steps --- */
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; margin: 50px 0; }
+        .process-step { padding: 20px; }
+        .step-number { font-size: 3rem; color: var(--accent-color); font-family: var(--font-heading); font-weight: bold; display: block; margin-bottom: 10px; }
+
+        /* --- FAQ Accordion --- */
+        .faq-container { margin-top: 40px; }
+        .faq-item { border-bottom: 1px solid #ddd; }
+        .faq-question {
+            background: none;
+            border: none;
             width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: left;
+            padding: 20px 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
         }
-        .gallery-grid img:hover {
-            transform: scale(1.02);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
+        .faq-answer { display: none; padding-bottom: 20px; color: #666; }
+        .faq-item.active .faq-answer { display: block; }
+        .faq-item.active .faq-question { color: var(--secondary-color); }
 
-        /* --- 6. Buttons --- */
-        .btn-contact {
+        /* --- Buttons --- */
+        .btn-primary {
             background-color: var(--primary-color);
-            color: var(--text-light);
-            padding: 15px 40px;
+            color: white;
+            padding: 18px 50px;
             font-size: 1.1rem;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: bold;
             display: inline-block;
-            text-decoration: none;
-            margin-top: 20px;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,95,115,0.3);
         }
-        .btn-contact:hover { background-color: var(--secondary-color); color: white; }
-
-        /* --- 7. Footer --- */
-        footer {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(10,147,150,0.4);
         }
-        .social-container { margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
-        .social-icon { width: 30px; height: 30px; fill: var(--text-light); transition: all 0.3s ease; }
-        .social-icon:hover { fill: var(--accent-color); transform: translateY(-3px); }
 
-        /* Mobile Optimization */
+        /* --- Footer --- */
+        footer { background-color: var(--primary-color); color: white; padding: 3rem 1rem; text-align: center; margin-top: 50px; }
+        footer p { margin-bottom: 10px; font-weight: 300; }
+
+        /* --- Responsive --- */
         @media (max-width: 768px) {
             .navbar { flex-direction: column; position: relative; background-color: var(--primary-color); }
-            header { height: auto; min-height: 50vh; }
-            .container { margin: 20px; padding: 20px; }
+            header { height: auto; min-height: 50vh; padding-top: 40px; }
+            .container { margin: 0; padding: 30px 20px; width: 100%; border-radius: 0; }
+            .feature-row { flex-direction: column; }
+            header h1 { font-size: 2.5rem; }
         }
-        
-        /* Modal Styles */
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); }
-        .modal-content { background-color: #fefefe; margin: 15% auto; padding: 30px; border: 1px solid #888; width: 80%; max-width: 500px; border-radius: 10px; text-align: center; position: relative; }
-        .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; position: absolute; right: 20px; top: 10px; cursor: pointer; }
+
+        /* --- Modal --- */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(3px); }
+        .modal-content { background-color: #fff; margin: 10% auto; padding: 40px; border-radius: 8px; width: 90%; max-width: 500px; text-align: center; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; position: absolute; right: 20px; top: 15px; cursor: pointer; }
+        .close:hover { color: #000; }
     </style>
 </head>
 <body>
 
-<div class="navbar">
+<nav class="navbar">
     <a href="/">Home</a>
     <div class="dropdown">
         <button class="dropbtn">Services ▾</button>
@@ -213,7 +271,7 @@
             <a href="/services/womens-haircuts/">Women's Haircuts & Styling</a>
             <a href="/services/mens-grooming/">Men's Grooming & Fades</a>
             <a href="/services/hair-coloring/">Hair Coloring & Balayage</a>
-            <a href="/services/hair-treatments/">Hair Treatments (Repair)</a>
+            <a href="/services/hair-treatments/">Hair Treatments</a>
             <a href="/services/bridal-styling/">Bridal & Special Occasions</a>
         </div>
     </div>
@@ -225,82 +283,173 @@
         </div>
     </div>
     <a href="/blog/">Blog</a>
-</div>
+</nav>
 
 <header>
     <h1>Women's Haircuts & Styling</h1>
-    <p>Precision cuts tailored to your face shape and the Oceanside lifestyle.</p>
-    <br>
-    <button class="btn-contact" onclick="document.getElementById('contactModal').style.display='block'">Book Now</button>
+    <p>Redefining your style with precision artistry, tailored specifically to your facial features and the Oceanside lifestyle.</p>
+    <button class="btn-primary" onclick="openModal()">Book Your Appointment</button>
 </header>
 
 <div class="container">
-    <h2>Finding the Perfect Cut in Oceanside</h2>
-    <p>A great haircut is the foundation of your personal style. At Oceanside Hair Salon, we believe that your hair should not only look beautiful when you leave the salon but also be easy to manage in your daily life. Living in Oceanside, CA, means dealing with specific environmental factors like humidity, salt air, and an active outdoor lifestyle. Our stylists are trained to create cuts that work <em>with</em> these elements, not against them.</p>
     
-    <h3>Our Gallery</h3>
-    <div class="gallery-grid">
-        <img src="/images/womens-haircuts/blowout-styling-service-oceanside.jpg" alt="Blowout Styling">
-        <img src="/images/womens-haircuts/precision-hair-cutting-technique.jpg" alt="Precision Cut">
-        <img src="/images/womens-haircuts/long-layered-haircut-style.jpg" alt="Long Layers">
+    <div class="section-header">
+        <h2>The Art of the Perfect Cut</h2>
+    </div>
+    <div class="feature-row">
+        <div class="feature-text">
+            <p>At Oceanside Hair Salon, we believe that a haircut is more than just a trim—it is the foundation of your personal style. It frames your face, complements your bone structure, and expresses your personality to the world without saying a word.</p>
+            <p>Living in Oceanside means embracing the coastal elements. Whether you are battling the marine layer humidity or spending days in the salt air, we design cuts that are manageable, versatile, and effortlessly chic. We don't just cut for the salon chair; we cut for your real life.</p>
+            <p>Our stylists are trained in both British precision cutting (think sharp bobs and clean lines) and French dry-cutting (for soft, textured, lived-in layers). We combine these techniques to give you a wash-and-wear style that grows out beautifully.</p>
+        </div>
+        <div class="feature-img">
+            <img src="/images/womens-haircuts/precision-hair-cutting-technique.jpg" alt="Stylist performing a precision haircut">
+        </div>
     </div>
 
-    <div style="text-align: center; margin-top: 40px;">
-        <h3>Ready for a fresh look?</h3>
-        <button class="btn-contact" onclick="document.getElementById('contactModal').style.display='block'">Book Your Appointment</button>
+    <div class="section-header">
+        <h2>Signature Styles We Specialize In</h2>
     </div>
+    <ul class="service-list">
+        <li>
+            <h3>The "Oceanside" Textured Bob</h3>
+            <p>A modern twist on the classic bob. We add internal texturizing to remove bulk and create movement, making it perfect for air-drying with natural waves. This style is versatile enough to be worn sleek and professional or messy and beachy.</p>
+        </li>
+        <li>
+            <h3>Long Luxury Layers</h3>
+            <p>For clients who want to keep their length but crave volume and bounce. Our face-framing layering technique removes the "heaviness" from thick hair and adds life to fine hair. This cut is designed to look incredible with a round-brush blowout or beach waves.</p>
+        </li>
+        <li>
+            <h3>The Modern Shag & Wolf Cut</h3>
+            <p>For the trendsetters. These retro-inspired cuts use heavy layering and curtain bangs to create an edgy, rock-and-roll vibe that requires minimal styling. It’s the ultimate "cool girl" hair that embraces natural texture.</p>
+        </li>
+        <li>
+            <h3>Precision Pixie Cuts</h3>
+            <p>Bold, feminine, and liberating. We sculpt short hair to hug your head shape perfectly, highlighting your neck and cheekbones. Whether you want soft and wispy or sharp and geometric, we have the expertise to execute it.</p>
+        </li>
+        <li>
+            <h3>Curly & Wavy Hair Specialist</h3>
+            <p>We understand the unique needs of textured hair. We often utilize dry-cutting techniques to see exactly where your curls sit naturally, ensuring you never leave with a cut that is too short or uneven.</p>
+        </li>
+    </ul>
+
+    <div class="section-header">
+        <h2>Your Salon Experience</h2>
+    </div>
+    <p style="text-align: center; max-width: 700px; margin: 0 auto;">We believe in a holistic approach to hair care. Here is what you can expect during your visit to our Oceanside sanctuary.</p>
+    <div class="process-grid">
+        <div class="process-step">
+            <span class="step-number">01</span>
+            <h4>Consultation</h4>
+            <p>We sit down—before the shampoo bowl—to discuss your hair history, daily routine, and goals.</p>
+        </div>
+        <div class="process-step">
+            <span class="step-number">02</span>
+            <h4>Luxury Wash</h4>
+            <p>Enjoy a scalp massage with our premium sulfate-free shampoos tailored to your hair type.</p>
+        </div>
+        <div class="process-step">
+            <span class="step-number">03</span>
+            <h4>Precision Cut</h4>
+            <p>Your stylist will sculpt your hair using top-tier Japanese steel shears for the cleanest edge.</p>
+        </div>
+        <div class="process-step">
+            <span class="step-number">04</span>
+            <h4>Signature Blowout</h4>
+            <p>We finish with a professional blowout and styling lesson so you can recreate the look at home.</p>
+        </div>
+    </div>
+
+    <div style="background-color: #f0f7f8; padding: 30px; border-radius: 8px; margin-bottom: 50px;">
+        <h3 style="color: var(--primary-color); text-align: center; margin-bottom: 20px;">💡 Pro Tips for Oceanside Hair</h3>
+        <ul style="list-style-type: circle; margin-left: 20px;">
+            <li style="margin-bottom: 10px;"><strong>Fight the Frizz:</strong> The marine layer is real! Use a leave-in conditioner with humidity blockers every morning.</li>
+            <li style="margin-bottom: 10px;"><strong>Salt Protection:</strong> Before swimming in the ocean, wet your hair with fresh water. This prevents your hair from absorbing as much salt water.</li>
+            <li style="margin-bottom: 10px;"><strong>Regular Trims:</strong> To keep long hair healthy, a "dusting" (micro-trim) every 8-10 weeks prevents split ends from traveling up the shaft.</li>
+        </ul>
+    </div>
+
+    <div class="section-header">
+        <h2>Transformation Gallery</h2>
+    </div>
+    <div class="feature-row" style="gap: 15px;">
+        <img src="/images/womens-haircuts/blowout-styling-service-oceanside.jpg" alt="Blowout Style" style="width: 32%; height: 250px; object-fit: cover; border-radius: 4px;">
+        <img src="/images/womens-haircuts/long-layered-haircut-style.jpg" alt="Long Layers" style="width: 32%; height: 250px; object-fit: cover; border-radius: 4px;">
+        <img src="/images/womens-haircuts/short-bob-haircut-women.jpg" alt="Chic Bob Cut" style="width: 32%; height: 250px; object-fit: cover; border-radius: 4px;">
+    </div>
+
+    <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-container">
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">How often should I get a haircut? <span>+</span></button>
+            <div class="faq-answer">For short cuts and bobs, we recommend every 4-6 weeks to maintain the shape. For mid-length to long styles, every 8-12 weeks is usually sufficient to keep ends healthy.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">Do you cut hair wet or dry? <span>+</span></button>
+            <div class="faq-answer">It depends on your hair texture and the desired style. Generally, we cut wet for precision lines and dry for texturizing, refining, and curly hair customization.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">Does a haircut include a wash and style? <span>+</span></button>
+            <div class="faq-answer">Yes, absolutely. All our full haircut services include a luxury shampoo, conditioning scalp massage, and a signature blowout finish.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">Can I donate my hair? <span>+</span></button>
+            <div class="faq-answer">Yes! If you are cutting off 10 inches or more, let us know. We can prepare your hair in a ponytail for you to send to your preferred charity.</div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 60px;">
+        <h3>Ready to fall in love with your hair again?</h3>
+        <p>Appointments fill up fast. Secure your spot today.</p>
+        <button class="btn-primary" onclick="openModal()">Schedule Your Transformation</button>
+    </div>
+
 </div>
 
 <footer>
     <div style="max-width: 1200px; margin: 0 auto;">
-        <div class="social-container">
-            <a href="https://www.facebook.com/profile.php?id=61583963957390" target="_blank" aria-label="Visit our Facebook">
-                <svg class="social-icon" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
-            </a>
-            <a href="https://www.instagram.com/oceanside_hair_salon" target="_blank" aria-label="Visit our Instagram">
-                <svg class="social-icon" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.36-.2 6.78-2.618 6.98-6.98.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.361-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-            </a>
+        <h3 style="color: var(--accent-color); margin-bottom: 20px;">Oceanside Hair Salon</h3>
+        <p>401 Mission Ave, Oceanside, CA 92054</p>
+        <div style="margin-top: 20px;">
+            <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Facebook</a> | 
+            <a href="#" style="color: white; margin: 0 10px; text-decoration: none;">Instagram</a>
         </div>
-        <p style="margin-top: 2rem;">&copy; 2024 Oceanside Hair Salon. All rights reserved.</p>
-        <p style="font-size: 0.8rem;">123 Ocean View Drive, Oceanside, CA 92054</p>
+        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.7;">&copy; 2024 Oceanside Hair Salon. All rights reserved.</p>
     </div>
 </footer>
 
 <div id="contactModal" class="modal">
     <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2 style="color: var(--primary-color); margin-bottom: 15px;">Get in Touch</h2>
-        <p>Ready to transform your look? Book your appointment now.</p>
-        <div style="margin-top: 20px; text-align: left; display: inline-block;">
-            <p style="margin-bottom: 10px;">
-                <strong>📧 Email:</strong><br>
-                <a href="mailto:Oceansidehairsalon@gmail.com" style="color: var(--primary-color); text-decoration: none; font-size: 1.1rem;">
-                    Oceansidehairsalon@gmail.com
-                </a>
-            </p>
-            <p>
-                <strong>📞 Phone:</strong><br>
-                <a href="tel:+16469803726" style="color: var(--primary-color); text-decoration: none; font-size: 1.1rem; font-weight: bold;">
-                    +1 (646) 980-3726
-                </a>
-            </p>
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 style="color: var(--primary-color); margin-bottom: 15px;">Book Your Visit</h2>
+        <p>Ready for a fresh look? We'd love to see you.</p>
+        <div style="margin-top: 25px; text-align: left; background: #f9f9f9; padding: 20px; border-radius: 8px;">
+            <p><strong>📞 Phone:</strong> <a href="tel:+16469803726" style="color: var(--primary-color);">+1 (646) 980-3726</a></p>
+            <p><strong>📧 Email:</strong> <a href="mailto:oceansidehairsalon@gmail.com" style="color: var(--primary-color);">oceansidehairsalon@gmail.com</a></p>
+            <p><strong>📍 Address:</strong> 401 Mission Ave, Oceanside, CA</p>
         </div>
+        <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">Please call or email us with your preferred date and time.</p>
     </div>
 </div>
 
 <script>
-    // Modal Script
+    // Modal Logic
     var modal = document.getElementById("contactModal");
-    var span = document.getElementsByClassName("close")[0];
-    if(span) {
-        span.onclick = function() { modal.style.display = "none"; }
-    }
-    window.onclick = function(event) {
-        if (event.target == modal) { modal.style.display = "none"; }
+    function openModal() { modal.style.display = "block"; }
+    function closeModal() { modal.style.display = "none"; }
+    window.onclick = function(event) { if (event.target == modal) { closeModal(); } }
+
+    // FAQ Accordion Logic
+    function toggleFaq(element) {
+        element.parentElement.classList.toggle('active');
+        var span = element.querySelector('span');
+        if (element.parentElement.classList.contains('active')) {
+            span.textContent = '-';
+        } else {
+            span.textContent = '+';
+        }
     }
 </script>
 
