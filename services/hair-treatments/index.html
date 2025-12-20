@@ -19,10 +19,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Schema موحد -->
-   <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
+
     {
       "@type": "HairSalon",
       "@id": "https://oceansidehairsalon.com/#hair-salon",
@@ -34,6 +35,7 @@
       "email": "oceansidehairsalon@gmail.com",
       "address": {
         "@type": "PostalAddress",
+
         "addressLocality": "Oceanside",
         "addressRegion": "CA",
         "postalCode": "92054",
@@ -63,21 +65,138 @@
         "https://www.instagram.com/oceanside_hair_salon"
       ]
     },
+
     {
-      "@type": "CollectionPage",
-      "name": "Hair Treatments Services in Oceanside",
+      "@type": "WebPage",
+      "@id": "https://oceansidehairsalon.com/services/hair-treatments/#webpage",
       "url": "https://oceansidehairsalon.com/services/hair-treatments/",
+      "name": "Hair Treatments in Oceanside, CA | Keratin, Olaplex & Scalp Care",
+      "description": "Revive sun-damaged and frizzy hair with our expert treatments in Oceanside. Specializing in Keratin Smoothing, Olaplex Bond Repair, and Scalp Detox services.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://oceansidehairsalon.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://oceansidehairsalon.com/services/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Hair Treatments",
+            "item": "https://oceansidehairsalon.com/services/hair-treatments/"
+          }
+        ]
+      },
       "about": {
         "@id": "https://oceansidehairsalon.com/#hair-salon"
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": "Oceanside"
       }
+    },
+
+    {
+      "@type": "ItemList",
+      "@id": "https://oceansidehairsalon.com/services/hair-treatments/#services",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "name": "Keratin Smoothing Treatment",
+            "description": "Reduces frizz and humidity by infusing keratin deep into the hair cuticle, leaving hair silky, shiny, and manageable for up to 4 months."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Service",
+            "name": "Olaplex Bonding Service",
+            "description": "Rebuilds broken disulfide bonds in chemically treated hair, making it stronger and healthier from the inside out."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Service",
+            "name": "Deep Hydration Steam Masque",
+            "description": "Professional steam therapy allows nutrient-rich botanical masques to penetrate deeply, providing instant softness."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Service",
+            "name": "Scalp Detox & Exfoliation",
+            "description": "Removes buildup and stimulates blood flow for healthier hair growth."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Service",
+            "name": "Hard Water Mineral Removal",
+            "description": "Removes calcium and magnesium deposits from hair, restoring natural brightness and softness."
+          }
+        }
+      ]
+    },
+
+    {
+      "@type": "FAQPage",
+      "@id": "https://oceansidehairsalon.com/services/hair-treatments/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does a Keratin treatment last?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With proper care (using sulfate-free shampoo and washing less frequently), a Keratin treatment typically lasts between 3 to 5 months."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will Olaplex make my hair straight?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, Olaplex is a bond repair treatment, not a straightener. It improves the internal structure and health of the hair, enhancing your natural texture."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get a treatment and color on the same day?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Many treatments work best when paired with color. Olaplex can be added directly into lightener to prevent damage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I do a deep conditioning mask?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For most hair types in the dry Oceanside climate, we recommend a deep conditioning mask once a week at home, and a professional treatment every 4-6 weeks."
+          }
+        }
+      ]
     }
+
   ]
 }
 </script>
+
 
     <style>
         :root{
