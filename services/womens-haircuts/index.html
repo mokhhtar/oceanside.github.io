@@ -20,17 +20,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Schema موحد -->
-  <script type="application/ld+json">
+ <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
+
     {
       "@type": "HairSalon",
       "@id": "https://oceansidehairsalon.com/#hair-salon",
       "name": "Oceanside Hair Salon",
       "url": "https://oceansidehairsalon.com/",
       "logo": "https://oceansidehairsalon.com/favicon.png",
-      "image": "https://oceansidehairsalon.com/favicon.png",
+      "image": [
+        "https://oceansidehairsalon.com/favicon.png",
+        "https://images.unsplash.com/photo-1522337360705-8754d359d962?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+      ],
       "priceRange": "$$",
       "email": "oceansidehairsalon@gmail.com",
       "address": {
@@ -64,18 +68,91 @@
         "https://www.instagram.com/oceanside_hair_salon"
       ]
     },
+
     {
       "@type": "Service",
+      "@id": "https://oceansidehairsalon.com/services/womens-haircuts/#service",
       "name": "Women's Haircuts in Oceanside",
       "url": "https://oceansidehairsalon.com/services/womens-haircuts/",
-      "provider": {
-        "@id": "https://oceansidehairsalon.com/#hair-salon"
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": "Oceanside"
-      }
+      "provider": {"@id": "https://oceansidehairsalon.com/#hair-salon"},
+      "areaServed": {"@type": "City", "name": "Oceanside"},
+      "serviceType": "Haircut for women",
+      "image": [
+        "https://images.unsplash.com/photo-1522337360705-8754d359d962?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+        "https://oceansidehairsalon.com/images/womens-haircuts/precision-hair-cutting-technique.jpg"
+      ]
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://oceansidehairsalon.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://oceansidehairsalon.com/services/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Women's Haircuts",
+          "item": "https://oceansidehairsalon.com/services/womens-haircuts/"
+        }
+      ]
+    },
+
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How often should I get a haircut?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For short cuts and bobs, we recommend every 4-6 weeks to maintain the shape. For mid-length to long styles, every 8-12 weeks is usually sufficient to keep ends healthy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you cut hair wet or dry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on your hair texture and the desired style. Generally, we cut wet for precision lines and dry for texturizing, refining, and curly hair customization."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a haircut include a wash and style?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, absolutely. All our full haircut services include a luxury shampoo, conditioning scalp massage, and a signature blowout finish."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I donate my hair?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! If you are cutting off 10 inches or more, let us know. We can prepare your hair in a ponytail for you to send to your preferred charity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer bangs trims?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer complimentary bang trims for our regular clients between appointments to keep your style looking fresh."
+          }
+        }
+      ]
     }
+
   ]
 }
 </script>
