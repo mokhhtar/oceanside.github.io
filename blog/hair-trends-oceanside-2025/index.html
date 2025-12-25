@@ -95,12 +95,26 @@
         header h1 { font-size:2.8rem; text-shadow:2px 2px 8px rgba(0,0,0,0.5); margin-bottom:0.5rem; max-width: 900px;}
         header p { font-size:1.4rem; margin-bottom:2rem; }
 
-        .btn-contact {
-            background:var(--primary-color); color:white; padding:16px 44px;
-            border:none; border-radius:50px; font-weight:bold; font-size:1.2rem;
-            cursor:pointer; transition:0.3s; text-decoration:none; display:inline-block;
-        }
-        .btn-contact:hover { background:var(--secondary-color); transform:scale(1.05); }
+.btn-contact {
+    background: var(--primary-color); 
+    color: white !important; /* هام جداً لإظهار النص */
+    padding: 16px 44px;
+    border: none; 
+    border-radius: 50px; 
+    font-weight: bold; 
+    font-size: 1.2rem;
+    cursor: pointer; 
+    transition: 0.3s; 
+    text-decoration: none !important; /* لإزالة الخط من تحت الزر */
+    display: inline-block;
+    margin-top: 10px; /* مسافة إضافية للأمان */
+}
+
+.btn-contact:hover { 
+    background: var(--secondary-color); 
+    transform: scale(1.05); 
+    color: white !important;
+}
 
         /* Blog Content Styles */
         .blog-container {
