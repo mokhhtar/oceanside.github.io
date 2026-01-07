@@ -32,53 +32,62 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Schema Markup -->
   <script type="application/ld+json">
 {
+{
   "@context": "https://schema.org",
-  "@type": "HairSalon",
-  "@id": "https://oceansidehairsalon.com/#hair-salon",
-  "name": "Oceanside Hair Salon",
-  "url": "https://oceansidehairsalon.com/",
-  "logo": "https://oceansidehairsalon.com/favicon.png",
-  "image": "https://oceansidehairsalon.com/favicon.png",
-  "priceRange": "$$",
-  "email": "hello@oceansidehairsalon.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Oceanside",
-    "addressRegion": "CA",
-    "postalCode": "92054",
-    "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 33.195087,
-    "longitude": -117.370918
-  },
-  "openingHoursSpecification": [
+  "@graph": [
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "09:00",
-      "closes": "19:00"
+      "@type": "HairSalon",
+      "@id": "https://oceansidehairsalon.com/#hair-salon",
+      "name": "Oceanside Hair Salon",
+      "url": "https://oceansidehairsalon.com/",
+      "logo": "https://oceansidehairsalon.com/favicon.png",
+      "image": "https://oceansidehairsalon.com/favicon.png",
+      "priceRange": "$$",
+      "email": "hello@oceansidehairsalon.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Oceanside",
+        "addressRegion": "CA",
+        "postalCode": "92054",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 33.195087,
+        "longitude": -117.370918
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61583963957390",
+        "https://www.instagram.com/oceanside_hair_salon",
+      "https://www.pinterest.com/OceansideHairSalon/",
+      "https://x.com/OceansideHair"
+      ]
     },
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Saturday",
-      "opens": "09:00",
-      "closes": "17:00"
+      "@type": "WebSite",
+      "name": "Oceanside Hair Salon",
+      "url": "https://oceansidehairsalon.com/",
+      "publisher": {
+        "@id": "https://oceansidehairsalon.com/#hair-salon"
+      }
     }
-  ],
-  "sameAs": [
-    "https://www.facebook.com/profile.php?id=61583963957390",
-    "https://www.instagram.com/oceanside_hair_salon"
   ]
-        "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Oceanside Hair Salon",
-  "url": "https://oceansidehairsalon.com/",
-  "publisher": {
-    "@id": "https://oceansidehairsalon.com/#hair-salon"
-  }
 }
+
 </script>
 
 
@@ -368,6 +377,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </body>
 </html>
+
 
 
 
