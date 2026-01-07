@@ -1,81 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-        <style>
-/* Social Icons CSS */
-        .social-container {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+
+  <style>
+        /* --- GLOBAL STYLES --- */
+        :root {
+            --primary-color: #005f73;
+            --secondary-color: #0a9396;
+            --accent-color: #e9d8a6;
+            --bg-light: #f4f7f6;
+            --text-dark: #333;
+            --amazon-orange: #ff9900;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+            --success-green: #2ecc71;
         }
-        .social-icon {
-            width: 30px;
-            height: 30px;
-            fill: #333; /* لون داكن قليلاً ليتناسب مع خلفية المقالات */
-            transition: all 0.3s ease;
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:var(--font-body); color:var(--text-dark); line-height:1.6; background:var(--bg-light); }
+        h1,h2,h3,h4 { font-family:var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; }
+        p { margin-bottom: 1.2rem; font-size: 1.05rem; }
+        a { text-decoration: none; color: inherit; }
+
+        /* Navbar */
+        .navbar {
+            display:flex; justify-content:center; align-items:center;
+            background:rgba(0,95,115,0.98); width:100%; position:fixed; top:0; left:0;
+            padding:1rem 0; z-index:1000; backdrop-filter:blur(5px); box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .social-icon:hover {
-            fill: var(--secondary); /* يتغير للون التركواز عند اللمس */
-            transform: translateY(-3px);
+        .navbar a, .navbar .dropbtn {
+            font-weight:bold; font-size:17px; color:white !important;
+            padding:14px 20px; text-decoration:none; background:transparent; border:none; cursor:pointer;
         }
-                /* --- Dropdown Menu CSS --- */
-.navbar {
-    display: flex;
-    justify-content: center;
-    background-color: var(--primary-color); /* تأكد أنك معرف هذا المتغير أو استخدم #005f73 */
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+        .navbar a:hover, .dropdown:hover .dropbtn { color:var(--accent-color) !important; }
+        .dropdown { position:relative; display:inline-block; }
+        .dropdown-content {
+            display:none; position:absolute; background:#fff; min-width:240px;
+            box-shadow:0 8px 16px rgba(0,0,0,0.2); border-top:3px solid var(--secondary-color); z-index:1;
+        }
+        .dropdown-content a { color:#333 !important; padding:12px 16px; display:block; font-size:15px; }
+        .dropdown-content a:hover { background:#f1f1f1; color:var(--primary-color) !important; }
+        .dropdown:hover .dropdown-content { display:block; }
 
-.navbar a, .dropbtn {
-    font-family: 'Lato', sans-serif;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    border: none;
-    background: none;
-    cursor: pointer;
-}
+        /* Header */
+        header {
+            background: linear-gradient(rgba(0,40,50,0.7), rgba(0,95,115,0.7)), url('/images/blog/anti-frizz/header-hero.jpg');
+            background-size:cover; background-position:center; height:65vh;
+            display:flex; flex-direction:column; justify-content:center; align-items:center;
+            text-align:center; color:white; padding:20px; padding-top:100px;
+        }
+        header h1 { font-size:3.2rem; text-shadow:2px 2px 8px rgba(0,0,0,0.5); margin-bottom:1rem; color: #fff; max-width: 900px;}
+        header p { font-size:1.4rem; margin-bottom:2rem; max-width: 700px; color: #eee; }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
+        .btn-header {
+            background:var(--primary-color); color:white; padding:16px 44px;
+            border:2px solid var(--accent-color); border-radius:50px; font-weight:bold; font-size:1.2rem;
+            cursor:pointer; transition:0.3s;
+            
+        }
+        .btn-header:hover { background:var(--secondary-color); transform:scale(1.05); }
+                .btn-contact {
+            background:var(--primary-color); color:white; padding:16px 44px;
+            border:none; border-radius:50px; font-weight:bold; font-size:1.2rem;
+            padding: 12px 25px;
+            cursor:pointer; transition:0.3s; text-decoration:none; display:inline-block;
+        }
+        .btn-contact:hover { background:var(--secondary-color); transform:scale(1.05); color: #fff; }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    text-align: left;
-    border-top: 3px solid var(--secondary-color);
-}
+        /* Content Layout */
+        .content-wrapper { max-width: 1000px; margin: -80px auto 4rem; position: relative; z-index: 10; padding: 0 15px; }
+        .blog-post { background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+        .intro-text { font-size: 1.2rem; color: #444; margin-bottom: 2.5rem; border-bottom: 1px solid #eee; padding-bottom: 2rem; }
+        .intro-text strong { color: var(--primary-color); }
+        .content-link { color: var(--primary-color); text-decoration: underline; font-weight: 700; }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-size: 15px;
-}
+        /* Product Card Styles */
+        .product-card {
+            display: grid; grid-template-columns: 280px 1fr; gap: 2rem;
+            background: #fff; border: 1px solid #e0e0e0; border-radius: 12px;
+            margin-bottom: 3rem; overflow: hidden; transition: 0.3s ease;
+        }
 
-.dropdown-content a:hover {background-color: #f1f1f1; color: var(--primary-color);}
-.dropdown:hover .dropdown-content {display: block;}
-.navbar a:hover, .dropdown:hover .dropbtn {background-color: var(--secondary-color); border-radius: 4px;}
-
-/* Mobile responsiveness adjustment */
-@media screen and (max-width: 600px) {
-    .navbar { flex-direction: column; }
-    .dropdown-content { position: relative; }
-}
         
+        /* Footer */
+    footer{background:var(--primary-color);color:white;padding-top:4rem;font-family:'Lato',sans-serif;font-size:0.95rem;margin-top:5rem;}
+    .footer-container{max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:3rem;text-align:left;}
+    .footer-col h3{color:var(--accent-color);font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:1rem;}
+    .footer-col h4{color:white;margin-bottom:1.3rem;font-size:1.15rem;text-transform:uppercase;letter-spacing:1.2px;}
+    .footer-col p{color:rgba(255,255,255,0.85);line-height:1.7;margin-bottom:1rem;}
+    .footer-links li{margin-bottom:12px;}
+    .footer-links a{color:rgba(255,255,255,0.8);text-decoration:none;transition:all .3s ease;}
+    .footer-links a:hover{color:var(--accent-color);padding-left:8px;}
+    .contact-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:18px;color:rgba(255,255,255,0.9);line-height:1.5;}
+    .contact-row a{color:rgba(255,255,255,0.9);text-decoration:none;}
+    .contact-row a:hover{color:var(--accent-color);}
+    .social-icons{display:flex;gap:18px;margin-top:20px;}
+    .social-icons a svg{width:26px;height:26px;fill:white;transition:all .3s ease;}
+    .social-icons a:hover svg{fill:var(--accent-color);transform:translateY(-4px);}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.12);margin-top:3.5rem;padding:1.8rem 2rem;text-align:center;font-size:0.85rem;color:rgba(255,255,255,0.6);}
+    .footer-bottom a{color:rgba(255,255,255,0.6);text-decoration:none;}
+    .footer-bottom a:hover{color:var(--accent-color);}
+   
+        @media (max-width: 768px) {
+
+  .footer-container {
+    text-align: center;
+    grid-template-columns: 1fr; /* عمود واحد فقط */
+    gap: 2rem;
+  }
+
+  .footer-col {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-links {
+    padding: 0;
+  }
+
+  .footer-links li {
+    list-style: none;
+  }
+
+  .contact-row {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+.product-card { grid-template-columns: 1fr; }
+            .product-image-col { padding: 40px; }
+            header h1 { font-size: 2.2rem; }
+            .blog-post { padding: 1.5rem; }
+            .price-area { flex-direction: column; gap: 1rem; align-items: stretch; text-align: center; }
+            
+            /* FIX FOR MOBILE OVERLAP */
+            header { height: auto; min-height: 70vh; padding-bottom: 60px; }
+            .content-wrapper { margin-top: -30px; }
+            .contact-row{align-items:flex-start;}
+        }
     </style>
 <head><!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -84,9 +148,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-MD7SGPZP');</script>
 <!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EXJZHLZJ4C"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EXJZHLZJ4C"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EXJZHLZJ4C"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -94,11 +156,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       gtag('config', 'G-EXJZHLZJ4C'); gtag('config', 'G-8Q5FN0FDJY');
     </script>
 
-       <meta charset="UTF-8"><link rel="icon" type="image/png" href="/myfavicon/favicon-96x96.png" sizes="96x96" />
+       <link rel="icon" type="image/png" href="/myfavicon/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/myfavicon/favicon.svg" />
 <link rel="shortcut icon" href="/myfavicon/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/myfavicon/apple-touch-icon.png" />
 <link rel="manifest" href="/myfavicon/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="application/ld+json">
     {
@@ -172,34 +237,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD7SGPZP"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<header style="padding: 0; background: none;">
-    <div class="navbar">
-        <a href="/">Home</a>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD7SGPZP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-        <div class="dropdown">
-            <button class="dropbtn">Services ▾</button>
-            <div class="dropdown-content">
-                <a href="/services/womens-haircuts/">Women's Haircuts & Styling</a>
-                <a href="/services/mens-grooming/">Men's Grooming & Fades</a>
-                <a href="/services/hair-coloring/">Hair Coloring & Balayage</a>
-                <a href="/services/hair-treatments/">Hair Treatments (Repair)</a>
-                <a href="/services/bridal-styling/">Bridal & Special Occasions</a>
-            </div>
+<!-- Navigation -->
+<div class="navbar">
+    <a href="/">Home</a>
+    <div class="dropdown">
+        <button class="dropbtn">Services</button>
+        <div class="dropdown-content">
+            <a href="/services/womens-haircuts/">Women's Haircuts</a>
+            <a href="/services/mens-grooming/">Men's Grooming</a>
+            <a href="/services/hair-coloring/">Hair Coloring</a>
+            <a href="/services/hair-treatments/">Treatments</a>
+            <a href="/services/bridal-styling/">Bridal Styling</a>
         </div>
-
-        <div class="dropdown">
-            <button class="dropbtn">About Us ▾</button>
-            <div class="dropdown-content">
-                <a href="/blog/haircut-prices-oceanside/">Price List</a>
-                <a href="/contact/">Contact Us & Location</a>
-            </div>
-        </div>
-
-        <a href="/blog/">Blog</a>
     </div>
+    <div class="dropdown">
+        <button class="dropbtn">About Us</button>
+        <div class="dropdown-content">
+            <a href="/prices/">Price List</a>
+            <a href="/testimonials/">Client Reviews</a>
+            <a href="/contact/">Contact Us & Location</a>
+        </div>
+    </div>
+    <a href="/blog/">Blog</a>
+</div>
+
+<header>
+    <h1>Men’s vs Women’s Haircut Styles in Oceanside</h1>
+    <a href="#guide" class="btn-contact" style="text-decoration: none; color: white;">Jump to Article</a>
 </header>
 <div class="container">
-    <a href="/" class="nav-link">← Back to Home</a>
 
     <p>Oceanside has a unique style identity that blends relaxed beach vibes with modern trends. However, what men and women look for in a haircut often differs, even though the goal—looking great—remains the same.</p>
 
@@ -214,25 +284,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Our experts are ready to help. <a href="/" class="nav-link">Contact Oceanside Hair Salon</a>.</p>
     </div>
 </div>
-    <footer style="margin-top: 50px; border-top: 1px solid #ddd; padding-top: 30px; text-align: center;">
-        <div class="opening-hours">
-            <h3 style="color: var(--primary); margin-bottom: 10px;">Opening Hours</h3>
-            <ul style="list-style: none; padding: 0; font-size: 0.9rem; color: #555;">
-                <li>Mon - Fri: 09:00 AM - 07:00 PM</li>
-                <li>Saturday: 09:00 AM - 05:00 PM</li>
-                <li>Sunday: Closed</li>
+<footer>
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>Oceanside Hair Salon</h3>
+            <p>Experience precision styling and luxury care in the heart of Oceanside. We bring out the best version of you.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61583963957390" target="_blank" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/oceanside_hair_salon" target="_blank" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.36-.2 6.78-2.618 6.98-6.98.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.361-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://x.com/OceansideHair" target="_blank" aria-label="X Twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+
+    <a href="https://www.pinterest.com/OceansideHairSalon/" target="_blank" aria-label="Pinterest">
+        <svg viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.399.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.173 0 7.41 2.967 7.41 6.93 0 4.136-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.62 0 12.017 0z"/></svg>
+    </a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/services/">All Services</a></li>
+                <li><a href="/prices/">Price List</a></li>
+                <li><a href="/testimonials/">Client Reviews</a></li>
+                <li><a href="/blog/">Blog & Tips</a></li>
+                <li><a href="/contact/">Book Appointment</a></li>
             </ul>
         </div>
 
-        <div class="social-container">
-            <a href="https://www.facebook.com/people/Oceanside-Hair-Salon/61583963957390/" target="_blank">
-                <svg class="social-icon" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <a href="https://www.instagram.com/oceanside_hair_salon" target="_blank">
-                <svg class="social-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.36-.2 6.78-2.618 6.98-6.98.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.361-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
+        <div class="footer-col">
+            <h4>Find Us</h4>
+            <div class="contact-row"><span>Address</span><span>Oceanside, CA 92054</span></div>
+           
+            <div class="contact-row"><span>Email</span><a href="mailto:hello@oceansidehairsalon.com">hello@oceansidehairsalon.com</a></div>
+            <div class="contact-row" style="align-items:flex-start;">
+                <span style="margin-top:5px;">Hours</span>
+                <div>
+                    <div>Mon - Fri: 9:00 AM - 7:00 PM</div>
+                    <div>Saturday: 9:00 AM - 5:00 PM</div>
+                    <div style="color:var(--accent-color);">Sunday: Closed</div>
+                </div>
+            </div>
         </div>
-        <p>&copy; 2024 Oceanside Hair Salon.</p>
-    </footer>
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 Oceanside Hair Salon. All Rights Reserved. 
+        | <a href="/privacy-policy/">Privacy Policy</a>
+    </div>
+</footer>
 </body>
 </html>
