@@ -508,15 +508,138 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .social-icons a svg { width:26px; height:26px; fill:white; transition:all .3s ease; }
         .footer-bottom { border-top:1px solid rgba(255,255,255,0.12); margin-top:3.5rem; padding:1.8rem 2rem; text-align:center; font-size:0.85rem; color:rgba(255,255,255,0.6); }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .product-card { grid-template-columns: 1fr; }
-            .product-image-col { padding: 40px; }
-            .upsell-section { flex-direction: column; text-align: center; }
-            .price-area { flex-direction: column; gap: 1rem; align-items: stretch; text-align: center; }
-            header h1 { font-size: 2rem; }
-            .blog-post { padding: 1.5rem; }
-        }
+/* =====================
+   MOBILE FIXES
+   ===================== */
+@media (max-width: 768px) {
+
+  /* ===== Navbar ===== */
+
+
+  /* ===== Header ===== */
+            header { height: auto; min-height: 70vh; padding-bottom: 60px; }
+            .content-wrapper { margin-top: -30px; }
+            .contact-row{align-items:flex-start;}
+
+
+
+  /* ===== Content Wrapper ===== */
+
+
+  .blog-post {
+    padding: 1.2rem;
+  }
+
+  /* ===== Tables ===== */
+  .comparison-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 0.85rem;
+  }
+
+  /* ===== Product Cards ===== */
+   .product-card {
+    display: flex;
+    flex-direction: column;
+    overflow: visible;   /* مهم جداً */
+    border-radius: 12px;
+  }
+
+  .product-image-col {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .product-image-col img {
+    width: 100%;
+    height: auto;        /* يمنع القص */
+    max-height: none;    /* يلغي التقييد */
+    object-fit: contain;
+  }
+
+  .best-for-badge {
+    position: static;   
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 0.75rem;
+  }
+
+  .product-details-col {
+    padding: 1.2rem;
+  }
+
+  .product-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .product-title {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .features-list li {
+    font-size: 0.9rem;
+  }
+
+  .price-area {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .amazon-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  /* ===== Price Area ===== */
+  .price-area {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .amazon-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ===== Upsell Section ===== */
+  .upsell-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .upsell-img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+  }
+
+  /* ===== FAQ ===== */
+  .faq-question {
+    font-size: 1rem;
+  }
+
+  /* ===== Footer ===== */
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .contact-row {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
     </style>
 </head>
 <body><!-- Google Tag Manager (noscript) -->
