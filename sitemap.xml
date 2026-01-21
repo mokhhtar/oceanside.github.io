@@ -2,7 +2,6 @@
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="https://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- الصفحة الرئيسية -->
   <url>
     <loc>https://oceansidehairsalon.com/</loc>
     <lastmod>2025-12-06</lastmod>
@@ -10,7 +9,6 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- صفحة الخدمات الرئيسية -->
   <url>
     <loc>https://oceansidehairsalon.com/services/</loc>
     <lastmod>2025-12-06</lastmod>
@@ -18,7 +16,6 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- خدمات فرعية (أهم صفحات الموقع) -->
   <url>
     <loc>https://oceansidehairsalon.com/services/womens-haircuts/</loc>
     <lastmod>2025-12-06</lastmod>
@@ -50,7 +47,6 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- صفحات مهمة أخرى -->
   <url>
     <loc>https://oceansidehairsalon.com/prices/</loc>
     <lastmod>2025-12-06</lastmod>
@@ -70,11 +66,16 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://oceansidehairsalon.com/blog/hard-water-complete-guide/</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-  <!-- مدونة (Blog) -->
   <url>
     <loc>https://oceansidehairsalon.com/blog/</loc>
-    <lastmod>2025-12-06</lastmod>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -102,28 +103,29 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-<url>
-  <loc>https://oceansidehairsalon.com/blog/hair-trends-oceanside-2025/</loc>
-  <lastmod>2025-12-20</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
-<url>
-  <loc>https://oceansidehairsalon.com/blog/best-anti-frizz-products-oceanside/</loc>
-  <lastmod>2026-01-06</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
-<url>
-  <loc>https://oceansidehairsalon.com/blog/best-barbers-oceanside-2025/</loc>
-  <lastmod>2026-01-01</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
-<url>
-  <loc>https://oceansidehairsalon.com/blog/best-electric-shavers-sensitive-skin-2025/</loc>
-  <lastmod>2026-01-01</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
+  <url>
+    <loc>https://oceansidehairsalon.com/blog/hair-trends-oceanside-2025/</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://oceansidehairsalon.com/blog/best-anti-frizz-products-oceanside/</loc>
+    <lastmod>2026-01-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://oceansidehairsalon.com/blog/best-barbers-oceanside-2025/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://oceansidehairsalon.com/blog/best-electric-shavers-sensitive-skin-2025/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>
