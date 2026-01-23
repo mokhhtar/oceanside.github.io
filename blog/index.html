@@ -129,6 +129,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       ]
     }
     </script>
+
     <style>
         :root {
             --primary-color: #005f73;
@@ -137,16 +138,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             --bg-light: #f4f7f6;
             --text-dark: #333;
             --text-light: #fff;
+            --amazon-orange: #ff9900;
             --font-heading: 'Playfair Display', serif;
             --font-body: 'Lato', sans-serif;
         }
+        
         * { margin:0; padding:0; box-sizing:border-box; }
         body { font-family:var(--font-body); color:var(--text-dark); line-height:1.6; background:var(--bg-light); }
         h1,h2,h3 { font-family:var(--font-heading); }
-        /* Navbar موحد */
+        
+        /* Navbar */
         .navbar {
             display:flex; justify-content:center; align-items:center;
-            background:rgba(0,95,115,0.95); width:100%; position:fixed; top:0; left:0;
+            background:rgba(0,95,115,0.98); width:100%; position:fixed; top:0; left:0;
             padding:1rem 0; z-index:1000; backdrop-filter:blur(5px);
             box-shadow:0 2px 10px rgba(0,0,0,0.1);
         }
@@ -154,7 +158,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-weight:bold; font-size:17px; color:white !important;
             padding:14px 20px; text-decoration:none; background:transparent; border:none; cursor:pointer;
         }
-        .navbar a:hover, .dropdown:hover .dropbtn { color:var(--secondary-color) !important; }
+        .navbar a:hover, .dropdown:hover .dropbtn { color:var(--accent-color) !important; }
         .dropdown { position:relative; display:inline-block; }
         .dropdown-content {
             display:none; position:absolute; background:#fff; min-width:240px;
@@ -163,57 +167,98 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .dropdown-content a { color:#333 !important; padding:12px 16px; display:block; font-size:15px; }
         .dropdown-content a:hover { background:#f1f1f1; color:var(--primary-color) !important; }
         .dropdown:hover .dropdown-content { display:block; }
-        /* Hero Header */
+
+        /* Header */
         header {
-            background:linear-gradient(rgba(0,95,115,0.7),rgba(10,147,150,0.7)), url('/images/blog/blog-hero.jpg');
-            background-size:cover; background-position:center; height:60vh;
+            background:linear-gradient(rgba(0,95,115,0.8),rgba(10,147,150,0.8)), url('/images/blog/blog-hero.jpg');
+            background-size:cover; background-position:center; height:50vh; min-height: 400px;
             display:flex; flex-direction:column; justify-content:center; align-items:center;
-            text-align:center; color:white; padding:20px; padding-top:100px;
+            text-align:center; color:white; padding:20px; padding-top:80px;
         }
         header h1 { font-size:3.5rem; text-shadow:2px 2px 8px rgba(0,0,0,0.5); margin-bottom:0.5rem; }
-        header p { font-size:1.4rem; margin-bottom:2rem; }
+        header p { font-size:1.4rem; margin-bottom:2rem; max-width: 600px; }
         .btn-contact {
             background:var(--primary-color); color:white; padding:16px 44px;
             border:none; border-radius:50px; font-weight:bold; font-size:1.2rem;
             cursor:pointer; transition:0.3s; text-decoration:none; display:inline-block;
+            border: 2px solid transparent;
         }
-        .btn-contact:hover { background:var(--secondary-color); transform:scale(1.05); }
-        /* Blog Grid */
-        .container { max-width:1100px; margin:-80px auto 100px; padding:60px; background:white; border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,0.08); position:relative; z-index:10; }
-        .blog-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:40px; margin-top:40px; }
-        .blog-card { background:white; border-radius:12px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.07); transition:0.3s; }
-        .blog-card:hover { transform:translateY(-10px); box-shadow:0 15px 35px rgba(0,0,0,0.12); }
-        .blog-img { height:220px; overflow:hidden; }
-        .blog-img img { width:100%; height:100%; object-fit:cover; transition:0.4s; }
-        .blog-card:hover .blog-img img { transform:scale(1.08); }
-        .blog-content { padding:30px; }
-        .blog-content h3 { font-size:1.7rem; margin-bottom:12px; color:var(--primary-color); line-height:1.3; }
-        .blog-meta { color:#777; font-size:0.95rem; margin-bottom:15px; display:flex; gap:15px; flex-wrap:wrap; }
-        .blog-meta span { color:var(--secondary-color); font-weight:bold; }
-        .blog-excerpt { color:#555; margin:15px 0; line-height:1.7; }
-        .read-more { color:var(--primary-color); font-weight:bold; text-decoration:none; border-bottom:2px solid transparent; transition:0.3s; }
-        .read-more:hover { color:var(--secondary-color); border-bottom:2px solid var(--secondary-color); }
-@media (max-width:768px){
+        .btn-contact:hover { background:transparent; border-color:white; }
 
-  header{height:auto;padding-top:140px;}
-  header h1{font-size:2.4rem;}
+        /* === Featured Post Section (New) === */
+        .featured-wrapper {
+            max-width: 1100px; margin: -60px auto 4rem; padding: 0 20px; position: relative; z-index: 10;
+        }
+        .featured-card {
+            display: grid; grid-template-columns: 1.5fr 1fr;
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1); transition: 0.3s;
+        }
+        .featured-card:hover { transform: translateY(-5px); }
+        .featured-img { height: 100%; min-height: 350px; position: relative; }
+        .featured-img img { width: 100%; height: 100%; object-fit: cover; }
+        .featured-content { padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
+        .featured-badge {
+            background: var(--amazon-orange); color: white; padding: 6px 14px;
+            text-transform: uppercase; font-weight: 800; font-size: 0.8rem; letter-spacing: 1px;
+            border-radius: 4px; width: fit-content; margin-bottom: 1.2rem;
+        }
+        .featured-content h2 { font-size: 2.2rem; margin-bottom: 1rem; color: var(--primary-color); line-height: 1.2; }
+        .featured-content .read-more { margin-top: 1rem; font-size: 1.1rem; }
 
-  .container{
-    margin:-9px 15px 40px;
-    padding:30px 20px;
-  }
+        /* === Category Sections === */
+        .category-section { max-width: 1100px; margin: 0 auto 5rem; padding: 0 20px; }
+        .category-header { 
+            display: flex; align-items: center; justify-content: space-between; 
+            margin-bottom: 2rem; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px;
+        }
+        .category-title { font-size: 1.8rem; color: var(--primary-color); position: relative; }
+        .category-title::after {
+            content: ''; position: absolute; bottom: -12px; left: 0;
+            width: 100%; height: 2px; background: var(--secondary-color);
+        }
 
-  .footer-container{
-    grid-template-columns:1fr;
-    text-align:center;
-  }
+        /* Grid & Cards */
+        .blog-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:30px; }
+        .blog-card { background:white; border-radius:10px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.05); transition:0.3s; display: flex; flex-direction: column; }
+        .blog-card:hover { transform:translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.1); }
+        
+        .blog-img { height: 200px; overflow: hidden; position: relative; }
+        .blog-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
+        .blog-card:hover .blog-img img { transform: scale(1.08); }
+        
+        /* Badges for Cards */
+        .card-badge {
+            position: absolute; top: 15px; left: 15px;
+            background: rgba(0, 95, 115, 0.9); color: white;
+            padding: 4px 10px; font-size: 0.75rem; font-weight: 700;
+            text-transform: uppercase; border-radius: 4px; z-index: 2;
+        }
+        .badge-science { background: #2a9d8f; } /* Green for solutions */
+        .badge-guide { background: #e9c46a; color: #333; } /* Yellow for guides */
+        .badge-trends { background: #e76f51; } /* Red for trends */
 
-  .contact-row,
-  .social-icons{
-    justify-content:center;
-  }
-}
-        /* Footer موحد */
+        .blog-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .blog-content h3 { font-size: 1.4rem; margin-bottom: 10px; color: var(--primary-color); line-height: 1.3; }
+        .blog-meta { color: #888; font-size: 0.85rem; margin-bottom: 12px; font-weight: 600; }
+        .blog-excerpt { color: #555; font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
+        .read-more { color: var(--secondary-color); font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; }
+        .read-more:hover { color: var(--primary-color); }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            header { height: auto; padding-top: 120px; padding-bottom: 80px; }
+            header h1 { font-size: 2.2rem; }
+            .featured-card { grid-template-columns: 1fr; }
+            .featured-img { height: 220px; min-height: auto; }
+            .featured-content { padding: 1.5rem; }
+            .featured-content h2 { font-size: 1.6rem; }
+            .category-section { margin-bottom: 3rem; }
+            .footer-container { grid-template-columns: 1fr; text-align: center; }
+            .contact-row, .social-icons { justify-content: center; }
+        }
+
+        /* Footer */
         footer { background-color:var(--primary-color); color:white; padding-top:4rem; font-family:'Lato',sans-serif; font-size:0.95rem; margin-top:5rem; }
         .footer-container { max-width:1200px; margin:0 auto; padding:0 2rem; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:3rem; text-align:left; }
         .footer-col h3 { color:var(--accent-color); font-family:'Playfair Display',serif; font-size:1.8rem; margin-bottom:1rem; }
@@ -232,13 +277,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .footer-bottom { border-top:1px solid rgba(255,255,255,0.12); margin-top:3.5rem; padding:1.8rem 2rem; text-align:center; font-size:0.85rem; color:rgba(255,255,255,0.6); }
         .footer-bottom a { color:rgba(255,255,255,0.6); text-decoration:none; }
         .footer-bottom a:hover { color:var(--accent-color); }
-        @media (max-width:768px) { .footer-container { text-align:center; grid-template-columns:1fr; } .contact-row,.social-icons { justify-content:center; } }
     </style>
 </head>
-<body><!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD7SGPZP"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<body>
+
 <div class="navbar">
     <a href="/">Home</a>
     <div class="dropdown">
@@ -261,144 +303,183 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <a href="/blog/">Blog</a>
 </div>
+
 <header>
-    <h1>Blog & Hair Tips</h1>
-    <p>Expert advice, styling trends, and behind-the-scenes from Oceanside Hair Salon</p>
-    <a href="/contact/" target="_blank" class="btn-contact">Book Appointment</a>
+    <h1>The Oceanside Journal</h1>
+    <p>Expert hair care science, styling trends, and local salon insights.</p>
 </header>
-<div class="container">
-    <div class="blog-grid">
-        
-        <div class="blog-card">
 
-            <div class="blog-content">
-         <h3>Hard Water & Hair: The Complete Guide</h3>
+<div class="featured-wrapper">
+    <div class="featured-card">
+        <div class="featured-img">
+            <span class="card-badge badge-guide" style="top:20px; left:20px;">MUST READ</span>
+            <img src="/images/blog/hard-water-complete-guide-hero.jpg" alt="Hard Water Hair Damage Guide" loading="lazy">
+        </div>
+        <div class="featured-content">
+            <span class="featured-badge">Featured Guide</span>
+            <h2>Hard Water Is Ruining Your Hair: The Complete Science-Backed Guide</h2>
             <div class="blog-meta">
-            <span>January 21, 2026</span> • <span>10 min read</span>
-         </div>
-         <p class="blog-excerpt">
-            Is hard water ruining your hair color, causing dryness, or buildup? This ultimate guide explains what hard water does to hair, signs of damage, and the best shampoos, filters & treatments for Oceanside residents.
-         </p>
+                <span>January 21, 2026</span> • <span>10 min read</span>
+            </div>
+            <p class="blog-excerpt">
+                Is hard water ruining your hair color, causing dryness, or buildup? This ultimate guide explains exactly what hard water does to hair, signs of damage, and the proven fixes for Oceanside residents.
+            </p>
             <a href="/blog/hard-water-complete-guide/" class="read-more">Read the Complete Guide →</a>
-         </div>
-        </div>
-        <div class="blog-card">
-
-            <div class="blog-content">
-         <h3>Shampoos That Actually Work for Hard Water Hair</h3>
-            <div class="blog-meta">
-            <span>January 22, 2026</span> • <span>7 min read</span>
-         </div>
-         <p class="blog-excerpt">
-            Discover the top shampoos that effectively combat the effects of hard water on hair, including chelating formulas to remove mineral buildup, ideal for Oceanside residents dealing with local water quality.
-         </p>
-            <a href="https://oceansidehairsalon.com/blog/shampoos-that-work-hard-water-hair/" class="read-more">Read the Complete Guide →</a>
-         </div>
-        </div>
-
-        <div class="blog-card">
-
-            <div class="blog-content">
-                <h3>7 Best Anti-Frizz Hair Products for Oceanside Humidity (2025 Guide)</h3>
-                <div class="blog-meta">
-                    <span>January 02, 2026</span> • <span>7 min read</span>
-                </div>
-                <p class="blog-excerpt">
-                    Struggling with the marine layer? Discover the top 7 anti-frizz products to tame humidity and keep your hair smooth in Oceanside, CA. Salon-approved picks.
-                </p>
-                <a href="/blog/best-anti-frizz-products-oceanside/" class="read-more">Read More →</a>
-            </div>
-        </div>
-
-        <div class="blog-card">
-            <div class="blog-content">
-                <h3>10 Best Barbers in Oceanside, CA (2025 Ranked Guide)</h3>
-                <div class="blog-meta">
-                    <span>December 30, 2025</span> • <span>9 min read</span>
-                </div>
-                <p class="blog-excerpt">
-                    Looking for the best barber in Oceanside? We ranked the top 10 local barbershops based on fades, beard trims, and hot towel shaves.
-                </p>
-                <a href="/blog/best-barbers-oceanside-2025/" class="read-more">Read More →</a>
-            </div>
-        </div>
-        <div class="blog-card">
-            <div class="blog-content">
-                <h3>Best Electric Shavers for Sensitive Skin in Oceanside (2025 Barber Guide)</h3>
-                <div class="blog-meta">
-                    <span>December 28, 2025</span> • <span>8 min read</span>
-                </div>
-                <p class="blog-excerpt">
-                    Living in Oceanside? Don't let salt air and humidity ruin your shave. Here are the top 5 electric shavers for sensitive skin recommended by local barbers for 2025.
-                </p>
-                <a href="/blog/best-electric-shavers-sensitive-skin-2025/" class="read-more">Read More →</a>
-            </div>
-        </div>
-
-        <div class="blog-card">
-            <div class="blog-content">
-                <h3>Top Hair Trends in Oceanside, CA for 2025</h3>
-                <div class="blog-meta">
-                    <span>December 20, 2025</span> • <span>7 min read</span>
-                </div>
-                <p class="blog-excerpt">
-                    Discover the top hair trends in Oceanside, CA for 2025. From coastal curtain bangs and textured bobs to low-maintenance balayage, see what local stylists recommend.
-                </p>
-                <a href="/blog/hair-trends-oceanside-2025/" class="read-more">Read More →</a>
-            </div>
-        </div>
-
-        <div class="blog-card">
-            <div class="blog-content">
-                <h3>Top 10 Hair Salons in Oceanside for 2025</h3>
-                <div class="blog-meta">
-                    <span>November 20, 2025</span> • <span>8 min read</span>
-                </div>
-                <p class="blog-excerpt">
-                    Discover the best hair salons in Oceanside this year — from beachy balayage experts to precision haircut masters...
-                </p>
-                <a href="/blog/best-hair-salons-oceanside-2025/" class="read-more">Read More →</a>
-            </div>
-        </div>
-        <div class="blog-card">
-            <div class="blog-content">
-                <h3>How Much Does a Haircut Cost in Oceanside? (2025 Prices)</h3>
-                <div class="blog-meta">
-                    <span>November 20, 2025</span> • <span>6 min read</span>
-                </div>
-                <p class="blog-excerpt">
-                    Complete price guide for women's and men's haircuts, coloring, treatments, and bridal services in Oceanside, CA...
-                </p>
-                <a href="/blog/haircut-prices-oceanside/" class="read-more">Read More →</a>
-            </div>
-        </div>
-        <div class="blog-card">
-            <div class="blog-content">
-                <h3>15 Hottest Men’s & Women’s Haircut Styles in Oceanside 2025</h3>
-                <div class="blog-meta">
-                    <span>November 20, 2025</span> • <span>10 min read</span>
-                </div>
-                <p class="blog-excerpt">
-                    From skin fades and curtain bangs to wolf cuts and textured bobs — see what everyone in Oceanside is wearing this year...
-                </p>
-                <a href="/blog/mens-womens-haircut-styles-oceanside/" class="read-more">Read More →</a>
-            </div>
-        </div>
-        <div class="blog-card">
-            <div class="blog-content">
-                <h3>5 Signs Your Hair Needs a Professional Treatment in Oceanside</h3>
-                <div class="blog-meta">
-                    <span>November 27, 2025</span> • <span>7 min read</span>
-                </div>
-                <p class="blog-excerpt">
-                    Living by the beach is hard on your hair. Here are the top signs it's time for Olaplex, Keratin, or a scalp detox...
-                </p>
-                <a href="/blog/5-signs-hair-treatment-oceanside/" class="read-more">Read More →</a>
-            </div>
         </div>
     </div>
 </div>
-<!-- FOOTER -->
+
+<div class="category-section">
+    <div class="category-header">
+        <h2 class="category-title">Hard Water & Hair Health Solutions</h2>
+    </div>
+    <div class="blog-grid">
+        <div class="blog-card">
+            <div class="blog-img">
+                <span class="card-badge badge-science">Products</span>
+                <img src="/images/blog/best-chelating-shampoos-hard-water-hero.jpg" alt="Best Shampoos for Hard Water" loading="lazy">
+            </div>
+            <div class="blog-content">
+                <h3>Shampoos That Actually Work for Hard Water</h3>
+                <div class="blog-meta">Jan 22, 2026 • 7 min read</div>
+                <p class="blog-excerpt">Discover the top shampoos with chelating formulas (EDTA & Citric Acid) to remove mineral buildup effectively.</p>
+                <a href="/blog/shampoos-that-work-hard-water-hair/" class="read-more">Read Article →</a>
+            </div>
+        </div>
+
+        </div>
+</div>
+
+<div class="category-section">
+    <div class="category-header">
+        <h2 class="category-title">Treatment, Trends & Guides</h2>
+    </div>
+    <div class="blog-grid">
+        
+        <div class="blog-card">
+            <div class="blog-img">
+                <span class="card-badge badge-guide">Routine</span>
+                <img src="/images/damaged-frizzy-hair-help.jpg" alt="Hair Treatment Signs" loading="lazy">
+            </div>
+            <div class="blog-content">
+                <h3>5 Signs Your Hair Needs a Professional Treatment</h3>
+                <div class="blog-meta">Nov 27, 2025 • 7 min read</div>
+                <p class="blog-excerpt">How to tell if the salty beach air has damaged your hair and how to fix it with salon treatments.</p>
+                <a href="/blog/5-signs-hair-treatment-oceanside/" class="read-more">Read Article →</a>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <div class="blog-img">
+                <span class="card-badge badge-guide">Products</span>
+                <img src="/images/blog/anti-frizz-hero.jpg" alt="Anti Frizz Hair Products" loading="lazy">
+            </div>
+            <div class="blog-content">
+                <h3>7 Best Anti-Frizz Hair Products for Oceanside Humidity</h3>
+                <div class="blog-meta">Jan 02, 2025 • 7 min read</div>
+                <p class="blog-excerpt">Struggling with the marine layer? Discover the top 7 anti-frizz products to tame humidity and keep your hair smooth.</p>
+                <a href="/blog/best-anti-frizz-products-oceanside/" class="read-more">Read Article →</a>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <div class="blog-img">
+                <span class="card-badge badge-trends">2025 Trends</span>
+                <img src="/images/blog/hair-trends-hero.jpg" alt="Hair Trends 2025" loading="lazy">
+            </div>
+            <div class="blog-content">
+                <h3>Top Hair Trends in Oceanside, CA for 2025</h3>
+                <div class="blog-meta">Dec 20, 2025 • 7 min read</div>
+                <p class="blog-excerpt">From coastal curtain bangs to low-maintenance balayage, see what local stylists recommend.</p>
+                <a href="/blog/hair-trends-oceanside-2025/" class="read-more">Read Article →</a>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <div class="blog-img">
+                <span class="card-badge badge-guide">Pricing</span>
+                <img src="/images/blog/womens-haircut-styling-oceanside.jpg" alt="women's haircut styling" loading="lazy">
+            </div>
+            <div class="blog-content">
+                <h3>Haircut Prices in Oceanside (2025 Guide)</h3>
+                <div class="blog-meta">Nov 20, 2025 • 6 min read</div>
+                <p class="blog-excerpt">Detailed breakdown of haircut costs and what to expect when visiting top salons in the area.</p>
+                <a href="/blog/haircut-prices-oceanside/" class="read-more">Read Article →</a>
+            </div>
+        </div>
+        
+         <div class="blog-card">
+            <div class="blog-img">
+                <span class="card-badge badge-trends">Styles</span>
+                <img src="/images/blog/textured-bob-waves.jpg" alt="Haircut Styles" loading="lazy">
+            </div>
+            <div class="blog-content">
+                <h3>Men's & Women's Haircut Styles in Oceanside</h3>
+                <div class="blog-meta">Nov 20, 2025 • 10 min read</div>
+                <p class="blog-excerpt">Trending coastal hairstyles tailored for the Oceanside lifestyle.</p>
+                <a href="/blog/mens-womens-haircut-styles-oceanside/" class="read-more">Read Article →</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="category-section">
+    <div class="category-header">
+        <h2 class="category-title">Men's Grooming Tools & Guides</h2>
+    </div>
+    <div class="blog-grid">
+        
+        <div class="blog-card">
+            <div class="blog-img">
+                <span class="card-badge badge-guide">Tools</span>
+                <img src="/images/blog/Best-Electric-Shavers-for-Sensitive-Skin-hero.jpg" alt="Electric Shavers" loading="lazy">
+            </div>
+            <div class="blog-content">
+                <h3>Best Electric Shavers for Sensitive Skin</h3>
+                <div class="blog-meta">Dec 28, 2025 • 8 min read</div>
+                <p class="blog-excerpt">Barber-approved guide to the best electric razors specifically for coastal climates.</p>
+                <a href="/blog/best-electric-shavers-sensitive-skin-2025/" class="read-more">Read Article →</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="category-section">
+    <div class="category-header">
+        <h2 class="category-title">🏆 Oceanside Local Rankings & Reviews</h2>
+    </div>
+    <div class="blog-grid">
+        
+        <div class="blog-card">
+            <div class="blog-img">
+                <span class="card-badge badge-guide">Ranked</span>
+                <img src="/images/blog/best-barbers-oceanside-2025.jpg" alt="Barber's tools " loading="lazy">
+            </div>
+            <div class="blog-content">
+                <h3>10 Best Barbers in Oceanside, CA (2025 Ranked)</h3>
+                <div class="blog-meta">Dec 30, 2025 • 9 min read</div>
+                <p class="blog-excerpt">We ranked the top 10 local barbershops based on fades, beard trims, and service quality.</p>
+                <a href="/blog/best-barbers-oceanside-2025/" class="read-more">Read Article →</a>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <div class="blog-img">
+                <span class="card-badge badge-guide">Best Salons</span>
+                <img src="/images/blog/best-hair-salons-oceanside-2025.jpg" alt="Best Salons Interior" loading="lazy">
+            </div>
+            <div class="blog-content">
+                <h3>Top 10 Hair Salons in Oceanside for 2025</h3>
+                <div class="blog-meta">Nov 20, 2025 • 8 min read</div>
+                <p class="blog-excerpt">A comprehensive guide to finding the top-rated salons and stylists in Oceanside.</p>
+                <a href="/blog/best-hair-salons-oceanside-2025/" class="read-more">Read Article →</a>
+            </div>
+        </div>
+
+    </div>
+</div>
 <footer>
     <div class="footer-container">
         <div class="footer-col">
